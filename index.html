@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FJT2L — Fast Journey To Two Level | Investment Firm</title>
+  <meta name="description" content="FJT2L — Built on Trust. Focused on Your Future. Guided by seasoned financial professionals with 6+ years of expertise." />
+  <style>
+    :root{
+      --accent:#1f4f99;
+      --accent-2:#2b6fb3;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --muted:#666;
+      --success:#1a8f4a;
+      --danger:#c0392b;
+      --max-width:1100px;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef3fb);
+      color:#122;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:28px auto;
+      padding:20px;
+    }
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:84px;
+      height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:grey;
+      border-radius:8px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 6px 18px rgba(15,40,80,0.06);
+    }
+    .brand-title h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.6px;
+    }
+    .brand-sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .slogan{
+      margin-top:10px;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:20px;
+      align-items:start;
+    }
+
+    @media (max-width:900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:10px;
+      padding:18px;
+      box-shadow:0 6px 20px rgba(15,40,80,0.05);
+    }
+
+    .hero p{ margin:8px 0 14px 0; color:var(--muted) }
+
+    .offers{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .offer{
+      flex:1 1 220px;
+      border-radius:8px;
+      padding:12px;
+      background:linear-gradient(180deg,#ffffff,#fbfeff);
+      border:1px solid rgba(30,60,100,0.06);
+    }
+    .offer h3{ margin:0 0 6px 0; font-size:16px }
+    .offer small{ color:var(--muted) }
+
+    .min-amt{
+      margin-top:12px;
+      font-weight:700;
+      color:#0b3f6b;
+    }
+
+    form .form-row{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    form .form-row .field{ flex:1 }
+    label{ display:block; font-size:13px; margin-bottom:6px }
+    input[type="text"], input[type="email"], input[type="number"], select, textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid rgba(15,40,80,0.09);
+      font-size:14px;
+      background:#fff;
+    }
+    textarea{ min-height:100px; resize:vertical }
+    .muted{ color:var(--muted); font-size:13px }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn.secondary{ background:#eef3fb; color:var(--accent); border:1px solid rgba(30,60,100,0.06) }
+    .tiny{ font-size:12px; padding:8px 10px }
+
+    .security{
+      margin-top:12px;
+      background:#fff7e9;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid rgba(200,150,30,0.15);
+      color:#6a5300;
+      font-size:13px;
+    }
+
+    footer{ margin-top:18px; color:var(--muted); font-size:13px; text-align:center }
+
+    .disclaimer{
+      margin-top:12px;
+      color:var(--danger);
+      font-weight:600;
+    }
+
+    /* simple success */
+    .toast{
+      display:none;
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:#e8fbef;
+      border:1px solid rgba(26,143,74,0.12);
+      color:var(--success);
+      padding:12px 14px;
+      border-radius:8px;
+      box-shadow:0 8px 24px rgba(20,60,30,0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <!-- Logo image (replace path if needed). Provide alt text. -->
+        <img src="/mnt/data/IMG_7775.png" alt="FJT2L logo - rising chart and compass" style="max-width:100%;height:auto;display:block" />
+      </div>
+
+      <div class="brand-title">
+        <h1>FJT2L</h1>
+        <div class="brand-sub">Fast Journey To Two Level — Investment Firm</div>
+        <div class="slogan">“FJT2L — Built on Trust. Focused on Your Future.”</div>
+        <div class="brand-sub" style="margin-top:6px">Guided by seasoned financial professionals with 6+ years of expertise.</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left column: marketing, offers, convincing copy -->
+      <main>
+        <section class="card hero">
+          <h2>Why invest with FJT2L?</h2>
+          <p class="muted">
+            At FJT2L we combine disciplined strategy, professional risk management and transparent communication to help our clients grow and protect wealth.
+            Our team focuses on long-term value, regulatory compliance and clear reporting so you always know where your money is and how it is working for you.
+          </p>
+
+          <h3>What makes us different</h3>
+          <ul>
+            <li><strong>Trust & transparency:</strong> Clear reports, regular updates and open communication.</li>
+            <li><strong>Experienced team:</strong> Led by financial professionals with strong track records and over 6 years of hands-on experience.</li>
+            <li><strong>Risk-aware growth:</strong> We prioritize capital preservation while seeking attractive returns.</li>
+            <li><strong>Compliance-focused:</strong> We follow KYC/AML and local regulatory requirements (implementations depend on jurisdiction).</li>
+          </ul>
+
+          <div class="card" style="margin-top:12px">
+            <h3>Investment Offers</h3>
+            <p class="muted">Choose an offer that fits your timeframe and risk tolerance. All offers are subject to terms, conditions and verification.</p>
+
+            <div class="offers" aria-live="polite">
+              <div class="offer">
+                <h3>Promotional — High Yield</h3>
+                <small>3% interest per day (compound not implied). Payout after 5 months.</small>
+                <p style="margin-top:8px"><strong>Availability:</strong> December 2025 — May 2026</p>
+                <p class="muted">This is a limited promotional program. Terms apply.</p>
+              </div>
+
+              <div class="offer">
+                <h3>Standard Offer</h3>
+                <small>15% return after 30 days</small>
+                <p class="muted">Designed for short-term capital growth with defined payout period and verification steps.</p>
+              </div>
+
+              <div class="offer">
+                <h3>Custom Solutions</h3>
+                <small>Tailored plans for institutional and high-net-worth clients</small>
+                <p class="muted">Contact a relationship manager to design bespoke investments and timelines.</p>
+              </div>
+            </div>
+
+            <div class="min-amt">Minimum investment: <strong>$10,000 (USD)</strong></div>
+
+            <p class="disclaimer">
+              Important: All offers are subject to eligibility checks, verification and agreement to terms. Investing involves risk — returns are not guaranteed. Confirm availability and legal compliance before investing.
+            </p>
+          </div>
+
+          <div style="margin-top:14px" class="security">
+            <strong>Note on accuracy:</strong> Please ensure any claims about returns or team experience are honest and compliant with local financial laws. Misleading statements can cause legal and reputational harm.
+          </div>
+        </section>
+
+        <section style="margin-top:14px" class="card">
+          <h3>How we protect your funds</h3>
+          <p class="muted">We use bank-grade controls, separation of client assets, and strict internal procedures. Below are the technical & compliance practices we recommend you implement before accepting client funds:</p>
+          <ul>
+            <li>Always use HTTPS (TLS 1.2+). Do not send sensitive data over HTTP.</li>
+            <li>Perform server-side validation and sanitization for every form submission.</li>
+            <li>Store personal data encrypted-at-rest (e.g., AES-256) and never store plaintext payment credentials.</li>
+            <li>Implement KYC/AML onboarding and ID verification for all investors.</li>
+            <li>Use CSRF tokens, strong session management, password hashing (bcrypt/argon2), and role-based authorization.</li>
+            <li>Work with PCI-DSS-compliant payment processors if you accept card payments; do not handle raw card numbers on your server when possible.</li>
+            <li>Maintain an audit trail and offer clear reporting to clients.</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- Right column: sign-up form -->
+      <aside>
+        <div class="card">
+          <h3>Start your investment</h3>
+          <p class="muted">Complete the form and a relationship manager will contact you. All fields required unless noted.</p>
+
+          <!-- NOTE: Replace action URL with your secure server endpoint. Implement server-side validation. -->
+          <form id="signupForm" method="post" action="/submit" novalidate>
+            <!-- CSRF token placeholder (must be generated server-side) -->
+            <input type="hidden" name="csrf_token" value="__REPLACE_WITH_SERVER_GENERATED_TOKEN__" />
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="contact">Phone / Contact</label>
+                <input id="contact" name="contact" type="text" placeholder="+234 800 000 0000" required pattern="[\d+\-\s\(\)xext+]{6,30}" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="age">Age</label>
+                <input id="age" name="age" type="number" min="18" max="120" placeholder="18" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="income_source">Source of Income</label>
+                <select id="income_source" name="income_source" required>
+                  <option value="">Select source</option>
+                  <option value="retirement_benefits">Retirement benefits</option>
+                  <option value="student">Student</option>
+                  <option value="politician">Politician</option>
+                  <option value="landlord">Landlord</option>
+                  <option value="company_owner">Company owner</option>
+                  <option value="for_business">For business</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="amount">Amount to invest (USD)</label>
+                <input id="amount" name="amount" type="number" min="10000" step="0.01" placeholder="10000.00" required />
+                <small class="muted">Minimum $10,000</small>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="offer">Choose an offer</label>
+                <select id="offer" name="offer" required>
+                  <option value="">Select offer</option>
+                  <option value="promo_high_yield">Promotional — 3% per day (Dec 2025 — May 2026)</option>
+                  <option value="standard_30d">Standard — 15% after 30 days</option>
+                  <option value="custom">Custom / Institutional</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:8px">
+              <label>
+                <input type="checkbox" id="consent" name="consent" required /> I confirm that the information I provide is accurate and I have read the <a href="#terms">terms & conditions</a>.
+              </label>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+              <button type="submit" class="btn">Submit request</button>
+              <button type="button" class="btn secondary tiny" id="clearBtn">Clear</button>
+            </div>
+
+            <p id="formMsg" class="muted" style="margin-top:10px"></p>
+          </form>
+
+          <div style="margin-top:12px; font-size:12px" class="muted">
+            After submission we will contact you to complete KYC and to confirm availability of your selected offer.
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Security & Compliance</h4>
+          <p class="muted">Before accepting funds, ensure you have:</p>
+          <ol>
+            <li>Registered the firm where required and obtained necessary licenses.</li>
+            <li>Documented terms & liabilities and provided them to investors.</li>
+            <li>Implemented KYC (ID verification) and AML monitoring.</li>
+            <li>Partnered with regulated banks/payment processors for custody.</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> FJT2L — Fast Journey To Two Level · All rights reserved.
+    </footer>
+
+    <div class="toast" id="toast">Submission received — a representative will contact you shortly.</div>
+
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Basic front-end validation + UX. Note: Server-side validation is required and more important.
+    const form = document.getElementById('signupForm');
+    const clearBtn = document.getElementById('clearBtn');
+    const toast = document.getElementById('toast');
+    const formMsg = document.getElementById('formMsg');
+
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      formMsg.textContent = '';
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Client-side checks
+      const amount = parseFloat(document.getElementById('amount').value || '0');
+      const age = parseInt(document.getElementById('age').value || '0', 10);
+      const consent = document.getElementById('consent').checked;
+
+      if (!consent) {
+        formMsg.textContent = 'You must confirm terms and conditions.';
+        formMsg.style.color = 'var(--danger)';
+        return;
+      }
+      if (age < 18) {
+        formMsg.textContent = 'Investors must be at least 18 years old.';
+        formMsg.style.color = 'var(--danger)';
+        return;
+      }
+      if (amount < 10000) {
+        formMsg.textContent = 'Minimum investment is $10,000.';
+        formMsg.style.color = 'var(--danger)';
+        return;
+      }
+
+      // Show confirmation toast
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 5500);
+
+      // Show message
+      formMsg.textContent = 'Request submitted — we will contact you to complete KYC and confirm terms.';
+      formMsg.style.color = 'var(--success)';
+
+      // POST form data securely to server
+      // NOTE: Replace with actual secure endpoint on your server.
+      // This fetch is a placeholder — you MUST implement CSRF tokens, rate-limiting and server-side validation.
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        credentials: 'include' // send cookies for session if any
+      }).then(resp => {
+        // handle server response
+        // NOTE: Real endpoint must respond with JSON and proper status codes.
+        if (resp.ok) {
+          formMsg.textContent = 'Submission received — a representative will contact you shortly.';
+          formMsg.style.color = 'var(--success)';
+        } else {
+          formMsg.textContent = 'There was an error processing your request. Please try again later.';
+          formMsg.style.color = 'var(--danger)';
+        }
+      }).catch(err => {
+        // network or other error
+        formMsg.textContent = 'Could not send request. Check your network or try again later.';
+        formMsg.style.color = 'var(--danger)';
+        console.error('Form submission error:', err);
+      });
+
+    });
+  </script>
+</body>
+</html>
